@@ -1,9 +1,9 @@
-name: instll-dep-ssh
+name: install-dep-ssh
 
 on: [push]
 
 jobs:
-  test:
+  install:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2

@@ -1,9 +1,9 @@
-name: instll-dep-https
+name: install-dep-https
 
 on: [push]
 
 jobs:
-  test:
+  install:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -15,4 +15,4 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pip_install_privates
-        pip_install_privates --token ${{ secrets.ACTIONS_PIP_ACCESS_EXAMPLE_PROJECT_TOKEN }} requirements.ssh.txt
+        pip_install_privates --token ${{ secrets.ACTIONS_PIP_ACCESS_EXAMPLE_PROJECT_TOKEN }} requirements.txt
