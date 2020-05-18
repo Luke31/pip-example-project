@@ -13,7 +13,7 @@ jobs:
         python-version: 3.8
     - name: setup ssh
       run: |
-        mkdir -p ~/.ssh && echo -e "${{ACTIONS_PIP_ACCESS_EXAMPLE_PROJECT_PRIV}}" > ~/.ssh/id_rsa && chmod og-rwx ~/.ssh/id_rsa
+        mkdir -p ~/.ssh && echo -e "${{ secrets.ACTIONS_PIP_ACCESS_EXAMPLE_PROJECT_PRIV }}" > ~/.ssh/id_rsa && chmod og-rwx ~/.ssh/id_rsa
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
