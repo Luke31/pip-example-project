@@ -1,4 +1,4 @@
-name: lint-test
+name: instll-dep-ssh
 
 on: [push]
 
