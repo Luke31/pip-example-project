@@ -12,12 +12,13 @@ Python library to install: [aws-pylib](https://github.com/Luke31/aws-pylib) (for
 
 - Generate new keypair for each dependent application.
 - If multiple libraries are required, add content of `id_rsa.pub` as a new deploy key to required repo.
-    For this save the `id_rsa.pub` inside the dependent project [id_rsa.pub](https://github.com/Luke31/pip-example-project/blob/master/.github/workflows/id_rsa.pub), so you can easily get the public key to add new deploy keys.
+    - For this save the `id_rsa.pub` inside the dependent project [id_rsa.pub](https://github.com/Luke31/pip-example-project/blob/master/.github/workflows/id_rsa.pub), so you can easily get the public key to add new deploy keys.
 
 ## git https with PAT (Personal access token)
 1. Generate [Personal access tokens](https://github.com/settings/tokens) with scope `repo`
     `ACTIONS_PIP_ACCESS_EXAMPLE_PROJECT_TOKEN`
-    If you don't want to create the token on a real user, create a [machine user git account](https://developer.github.com/v3/guides/managing-deploy-keys/#machine-users). The machine user should only have read-access to the repositories.
+    - If you don't want to create the token on a real user, create a [machine user git account](https://developer.github.com/v3/guides/managing-deploy-keys/#machine-users) and generate a token for each dependent repository.
+    - The machine user should only have read-access to the repositories.
 1. Add a new secret to this dependent project `pip-example-project` with same name:
     `ACTIONS_PIP_ACCESS_EXAMPLE_PROJECT_TOKEN` = generated token
 1. Commit a change and see how the github actions `install-dep-https` is running
