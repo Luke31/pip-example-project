@@ -1,4 +1,4 @@
-name: instll-dep-ssh
+name: instll-dep-https
 
 on: [push]
 
