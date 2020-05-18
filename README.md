@@ -17,7 +17,7 @@ Python library to install: [aws-pylib](https://github.com/Luke31/aws-pylib) (for
 ## git https with PAT (Personal access token)
 1. Generate [Personal access tokens](https://github.com/settings/tokens) with scope `repo`
     `ACTIONS_PIP_ACCESS_EXAMPLE_PROJECT_TOKEN`
-    If you don't want to create the token on a real user, create a [machine user git account](https://developer.github.com/v3/guides/managing-deploy-keys/#machine-users).
+    If you don't want to create the token on a real user, create a [machine user git account](https://developer.github.com/v3/guides/managing-deploy-keys/#machine-users). The machine user should only have read-access to the repositories.
 1. Add a new secret to this dependent project `pip-example-project` with same name:
     `ACTIONS_PIP_ACCESS_EXAMPLE_PROJECT_TOKEN` = generated token
 1. Commit a change and see how the github actions `install-dep-https` is running
